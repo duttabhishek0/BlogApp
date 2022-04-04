@@ -1,5 +1,6 @@
 package com.abhishek.data.network.di
 
+import com.abhishek.common.Constants
 import com.abhishek.data.network.ApiService
 import com.abhishek.data.repository.GetBlogsRepositoryImpl
 import com.abhishek.domain.repository.GetBlogsRepository
@@ -12,12 +13,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 @InstallIn(SingletonComponent::class)
 @Module
-
 object DataModule {
 
     @Provides
     fun provideRetrofit() : Retrofit{
-        return Retrofit.Builder().baseUrl("")
+        return Retrofit.Builder().baseUrl(Constants.BASE_URL)
             .addConverterFactory(
                 GsonConverterFactory.create())
             .build()
