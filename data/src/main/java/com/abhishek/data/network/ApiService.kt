@@ -12,4 +12,5 @@ interface ApiService {
     suspend fun getBlogs(
         @Header("app-id") appId:String= Constants.APP_ID
     ) : Response<BlogsDTO>
+
 }
